@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css')}}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <title>CRUD</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1> All Users </h1>
+
+        <table class="table">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Full Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Created At</th>
+            </tr>
+            {% for one_user in all_users %}
+            <tr>
+                <td scope="row">{{one_user.id}}</td>
+                <td scope="row">{{one_user.first_name}} {{one_user.last_name}}</td>
+                <td scope="row">{{one_user.email}}</td>
+                <td scope="row">{{one_user.created_at}}</td>
+            </tr>
+            <br>
+            {% endfor %}
+        </table>
+
+        <a href="http://localhost:5000/new">Add a new user</a>
+    </div>
+</body>
+
+</html>

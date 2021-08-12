@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 2</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Add a New User:</h1>
+        <a href="http://localhost:5000/">Home</a>
+
+        <form class="sumbit" action="/result" method="post">
+            <div class="row">
+                <p>First Name: </p>
+                <label for="firstName"></label>
+                <input type="text" class="firstName" name="first_name" id="firstName">
+
+            </div>
+            <div class="row">
+                <p>Last Name: </p>
+                <label for="lastName"></label>
+                <input type="text" class="firstName" name="last_name" id="lastName">
+            </div>
+            <div class="row">
+                <p>Email: </p>
+                <label for="email"></label>
+                <input type="text" class="formInput" name="email" id="email">
+
+            </div>
+            <input type="submit" value="create">
+        </form>
+
+    </div>
+
+
+</html>
