@@ -13,14 +13,14 @@
 
 <body>
     <div class="container">
-        <h1> All Users </h1>
-
         <table class="table">
+            <h1> All Users </h1>
             <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Full Name</th>
                 <th scope="col">Email</th>
                 <th scope="col">Created At</th>
+                <th scope="col">Actions</th>
             </tr>
             {% for one_user in all_users %}
             <tr>
@@ -28,12 +28,16 @@
                 <td scope="row">{{one_user.first_name}} {{one_user.last_name}}</td>
                 <td scope="row">{{one_user.email}}</td>
                 <td scope="row">{{one_user.created_at}}</td>
+                <td scope="row"><a href="/users/{{one_user.id}}">Show</a>|<a
+                        href="/users/{{one_user.id}}/update">Edit</a>|<a
+                        href="/users/{{one_user.id}}/destroy">Delete</a>
+                </td>
+
             </tr>
-            <br>
             {% endfor %}
         </table>
 
-        <a href="http://localhost:5000/new">Add a new user</a>
+        <a href="/add">Add a new user</a>
     </div>
 </body>
 
