@@ -1,7 +1,9 @@
-from flask import Flask, render_template, request, session, redirect
-from users import Users
-app = Flask(__name__)
-app.secret_key = "something "
+
+from flask import render_template, request, session, redirect
+
+from flask_app import app
+
+from flask_app.models.users import Users
 
 
 @app.route('/')
@@ -64,7 +66,3 @@ def destroy(user_id):
     }
     destroy_user = Users.destroy(data)
     return redirect('/')
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
