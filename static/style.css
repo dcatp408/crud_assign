@@ -1,9 +1,70 @@
 .container{
     padding: 30px;
-    
-
+    display: flex;
+}
+.ninjaContainer{
+    padding: 50px;
 }
 h1{
     margin-bottom: 0px;
+    padding-bottom: 30PX;
     
+}
+ul{
+    list-style: none;
+    border: 2px solid black;
+    height: 300px;
+    width: 500px;
+    margin: 5px 10px;
+    overflow: auto;
+}
+
+.ninjaInfo{
+    width: 200px;
+}
+
+.ninjaRow{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+    padding-right: 30px;
+}
+.ninjaLab{
+    padding-right: 50px;
+    font-size: 1rem;
+}
+.createBtn{
+    margin-top: 30px;
+    margin-left: 140px;
+    background-color: lightgray;
+    color: black;
+    width: 120px;
+    height: 40px;
+    border: 2px solid #000;
+    box-shadow: 4px 4px #000;
+    font-size: 1rem;
+}
+
+label{
+    padding-right: 20px;
+}
+.row{
+    padding-top: 30px;
+    padding-left: 30px;
+}
+
+.form-select{
+    width: 150px;
+}
+
+.btn-primary{
+    margin-top: 30px;
+    margin-left: 140px;
+    background-color: lightgray;
+    color: black;
+    width: 120px;
+    height: 40px;
+    border: 2px solid #000;
+    box-shadow: 4px 4px #000;
+    font-size: 1rem;
 }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css')}}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <title>Ninjas</title>
+</head>
+
+<body>
+    <div class="ninjaContainer">
+        <h1>New Ninja</h1>
+        <form class="ninjaInfo" action="/ninjas/create" method="post">
+            <div class="ninjaRow">
+                <label class="ninjaLab">Dojo:</label>
+                <div class="selectBar">
+                    <select name="dojo_id" id="dojo_id" class="form-select">
+                        {% for dojo in dojos %}
+                        <option value="{{dojo.id}}">{{ dojo.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="ninjaRow">
+                <label class="ninjaLab">First Name: </label>
+                <input type="text" name="first_name" id="first_name" class="inputs">
+            </div>
+            <div class="ninjaRow">
+                <label class="ninjaLab">Last Name: </label>
+                <input type="text" name="last_name" id="last_name" class="inputs">
+            </div>
+            <div class="ninjaRow">
+                <label class="ninjaLab">Age: </label>
+                <input type="number" name="age" id="age" class="inputs">
+            </div>
+            <input type="submit" value="Create" class="btn-primary">
+            <br>
+            <a href="/dojos">Home</a>
+    </div>
+
+</body>
+
+</html>

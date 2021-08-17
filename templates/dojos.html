@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css')}}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <title>Dojos and Ninjas</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action="/dojos/create" method="post" class="col">
+            <h1>New Dojo</h1>
+            <div>
+                <label>Name:</label>
+                <input type="text" name="dojo_name" id="dojo_name">
+            </div>
+            <input type="submit" class="createBtn" value="Create">
+        </form>
+        <div class="col">
+            <h1>All Dojos</h1>
+            <ul>
+                {% for dojo in dojos %}
+                <li>
+                    <a href="/dojos/{{dojo.id}}">{{dojo.name}}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            <a href="/ninjas" class="row">Add Ninja</a>
+        </div>
+
+    </div>
+</body>
+
+</html>
