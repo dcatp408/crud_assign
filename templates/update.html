@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css')}}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    <title>Page 2</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Add a New User:</h1>
+        <a href="/">Home</a>
+
+        <form class="sumbit" action="/result" method="post">
+            <div class="row">
+                <p>First Name: </p>
+                <label for="firstName"></label>
+                <input type="text" class="firstName" name="first_name" id="firstName">
+
+            </div>
+            <div class="row">
+                <p>Last Name: </p>
+                <label for="lastName"></label>
+                <input type="text" class="firstName" name="last_name" id="lastName">
+            </div>
+            <div class="row">
+                <p>Email: </p>
+                <label for="email"></label>
+                <input type="text" class="formInput" name="email" id="email">
+
+            </div>
+            <input type="submit" value="create">
+        </form>
+
+    </div>
+
+</body>
+
+</html>
